@@ -255,7 +255,7 @@ extension ResolverData {
                 RegisterData(registerAnnotation: $0.value,
                              scopeAnnotation: scopeAnnotations[$0.key],
                              customRefAnnotation: customRefAnnotations[$0.key])
-            } + referenceAnnotations.flatMap {
+            } + referenceAnnotations.compactMap {
                 if let customRefAnnotation = customRefAnnotations[$0.key] {
                     return RegisterData(referenceAnnotation: $0.value,
                                         scopeAnnotation: scopeAnnotations[$0.key],
